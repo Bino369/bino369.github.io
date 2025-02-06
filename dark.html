@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --text-primary: #000000;
+        }
+        .dark-mode {
+            --bg-primary: #121212;
+            --text-primary: #ffffff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .toggle-container {
+            text-align: center;
+        }
+        .dark-mode-toggle {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .dark-mode-toggle:hover {
+            background-color: #d0d0d0;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .back-btn:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+        .back-btn svg {
+            width: 30px;
+            height: 30px;
+            stroke: #333;
+            stroke-width: 2;
+            fill: none;
+        }
+        .back-btn:hover svg {
+            stroke: #666;
+        }
+    </style>
+</head>
+<body>
+        <button class="back-btn" onclick="window.history.back()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+    <div class="toggle-container">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+            Toggle Dark Mode
+        </button>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
